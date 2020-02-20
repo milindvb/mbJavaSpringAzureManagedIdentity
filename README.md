@@ -111,3 +111,23 @@ AI: INFO 10-10-2019 19:37, 1: Configuration file has been successfully found as 
            return "Hello  "+txt;
         }
 ```
+7. The sample will fetch a secret or a key from Azure keyvault and display on the page.
+Authentication will be by Managed Services Identity 
+
+```
+           String msiEndpoint =  System.getenv("MSI_ENDPOINT");
+           String msiSecret =  System.getenv("MSI_SECRET");
+           AppServiceMSICredentials msiCredentials = new AppServiceMSICredentials(AzureEnvironment.AZURE,msiEndpoint, msiSecret);
+           KeyVaultClient keyVaultClient = new KeyVaultClient(msiCredentials);
+           String secret = keyVaultClient.getSecret("https://mykey.vault.azure.net/","MY-TEST-SECRET").toString();
+           String key = keyVaultClient.getKey("https://mykey.vault.azure.net/","myappkey").toString();
+           return "my key : "+key;
+```
+
+In the above code, replace "mykey" with your vault name.
+
+8. In Azure portal for the Webapp, turn on Identity
+
+9. then navigate to the Keyvault in portal and add new access policy
+
+
