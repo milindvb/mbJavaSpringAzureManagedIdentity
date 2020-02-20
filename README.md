@@ -111,9 +111,11 @@ Authentication will be by Managed Services Identity
 In the above code, replace "mykey" with your vault name.
 
 6. In Azure portal for the Webapp, turn on Identity
-![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img1.JPG)
+
 
 7. then navigate to the Keyvault in portal and add new access policy
+![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img1.JPG)
+
 ![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img2.JPG)
 
 
