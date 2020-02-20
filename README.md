@@ -95,23 +95,7 @@ AI: INFO 10-10-2019 19:37, 1: Configuration file has been successfully found as 
 [INFO] ------------------------------------------------------------------------
 ```
 
- 5. Browse the app using the url:
- https://myspringbootlinux2.azurewebsites.net/hello?text=world
- 
-
- 6. For the PublishController code, please check the file 
- ```
-/src/main/java/com/mibelhe/mbjavajib/PublishController.java
-```
-```
-        @RequestMapping(value="/hello")
-        @ResponseBody
-
-        public String method9(@RequestParam("text") String txt){
-           return "Hello  "+txt;
-        }
-```
-7. The sample will fetch a secret or a key from Azure keyvault and display on the page.
+5. The sample will fetch a secret or a key from Azure keyvault and display on the page.
 Authentication will be by Managed Services Identity 
 
 ```
@@ -126,9 +110,27 @@ Authentication will be by Managed Services Identity
 
 In the above code, replace "mykey" with your vault name.
 
-8. In Azure portal for the Webapp, turn on Identity
+6. In Azure portal for the Webapp, turn on Identity
 ![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img1.JPG)
 
-9. then navigate to the Keyvault in portal and add new access policy
+7. then navigate to the Keyvault in portal and add new access policy
 ![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img2.JPG)
 
+
+
+ 8. Browse the app using the url:
+ https://myspringbootlinux2.azurewebsites.net/hello?text=world
+ 
+
+ 9. For the PublishController code, please check the file 
+ ```
+/src/main/java/com/mibelhe/mbjavajib/PublishController.java
+```
+```
+        @RequestMapping(value="/hello")
+        @ResponseBody
+
+        public String method9(@RequestParam("text") String txt){
+           return "Hello  "+txt;
+        }
+```
