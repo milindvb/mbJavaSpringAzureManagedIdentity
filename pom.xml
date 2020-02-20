@@ -1,0 +1,172 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.mibelhe</groupId>
+	<artifactId>mbjavajib</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sample-code</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.4.RELEASE</version>
+	</parent>
+	<dependencies>
+                <dependency>
+                        <groupId>com.microsoft.rest</groupId>
+                        <artifactId>client-runtime</artifactId>
+                        <version>1.6.13</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.microsoft.azure</groupId>
+                        <artifactId>azure-client-runtime</artifactId>
+                        <version>1.6.13</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.microsoft.azure</groupId>
+                        <artifactId>azure-client-authentication</artifactId>
+                        <version>1.6.13</version>
+                </dependency>
+                <dependency>
+                        <groupId>com.microsoft.azure</groupId>
+                        <artifactId>azure-keyvault</artifactId>
+                        <version>1.2.2</version>
+                </dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- tag::actuator[] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- end::actuator[] -->
+		<!-- tag::tests[] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- end::tests[] -->
+
+		<dependency>
+			<groupId>com.microsoft.azure.functions</groupId>
+			<artifactId>azure-functions-java-library</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-data-lake-store-sdk</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+                <dependency>
+                   <groupId>com.microsoft.azure</groupId>
+                   <artifactId>azure-eventhubs</artifactId>
+                   <version>3.0.1</version>
+                </dependency>
+
+<dependency>
+    <groupId>com.azure</groupId>
+    <artifactId>azure-messaging-eventhubs</artifactId>
+    <version>5.0.1</version>
+</dependency>
+
+    <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+<plugin>
+ <groupId>com.microsoft.azure</groupId>
+ <artifactId>azure-webapp-maven-plugin</artifactId>
+ <version>1.9.0</version>
+ <configuration>
+   <deploymentType>jar</deploymentType>
+
+   <!-- configure app to run on port 80, required by App Service -->
+   <appSettings>
+     <property>
+       <name>JAVA_OPTS</name>
+       <value>-Dserver.port=80</value>
+     </property>
+   </appSettings>
+
+   <!-- Web App information -->
+   <resourceGroup>myspringbootlinux2</resourceGroup>
+   <appName>myspringbootlinux2</appName>
+   <region>centralus</region>
+
+   <!-- Java Runtime Stack for Web App on Linux-->
+
+   <linuxRuntime>jre8</linuxRuntime>
+
+                    <resources>
+                        <resource>
+                            <directory>${project.basedir}/target</directory>
+                            <targetPath>/</targetPath>
+                            <includes>
+                                <include>*.jar</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>${project.basedir}</directory>
+                            <targetPath>/</targetPath>
+                            <includes>
+                                <include>web.config</include>
+                            </includes>
+                        </resource>
+                    </resources>
+
+
+ </configuration>
+</plugin>
+
+		</plugins>
+	</build>
+</project>
