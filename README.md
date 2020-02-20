@@ -130,5 +130,5 @@ In the above code, replace "mykey" with your vault name.
 ![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img1.JPG)
 
 9. then navigate to the Keyvault in portal and add new access policy
-
+![Image description](https://github.com/milindvb/mbJavaSpringAzureManagedIdentity/blob/master/media/img2.JPG)
 
