@@ -67,7 +67,7 @@ $ mvn clean package
 ```
 
  4. Push to azure using "mvn azure-webapp:deploy"
- ```
+ ```bash
  $ mvn azure-webapp:deploy
 [INFO] Scanning for projects...
 [INFO]
@@ -98,7 +98,7 @@ AI: INFO 10-10-2019 19:37, 1: Configuration file has been successfully found as 
 5. The sample will fetch a secret or a key from Azure keyvault and display on the page.
 Authentication will be by Managed Services Identity 
 
-```
+```bash
            String msiEndpoint =  System.getenv("MSI_ENDPOINT");
            String msiSecret =  System.getenv("MSI_SECRET");
            AppServiceMSICredentials msiCredentials = new AppServiceMSICredentials(AzureEnvironment.AZURE,msiEndpoint, msiSecret);
