@@ -12,7 +12,7 @@
        
 
  3. Save pom.xml and build using "mvn clean package"
-  ```shell
+  ```sh
 $ mvn clean package
 [INFO] Scanning for projects...
 [INFO]
