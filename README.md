@@ -3,7 +3,7 @@
  1. Clone this repo locally
  2. Edit pom.xml and change the following:
 
-       ```bash
+       ```xml
        <!-- Web App information -->
        <resourceGroup>myspringbootresgrp</resourceGroup>  <--- Change to your resource group
        <appName>myspringbootlinux2</appName>  <-- new or existing app name
